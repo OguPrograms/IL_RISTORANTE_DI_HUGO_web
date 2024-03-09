@@ -86,9 +86,15 @@ button:hover{ /*La animació que tenen els botons*/
 .separacio{height: 5vh;}
 
 /******QUI SOM******/
-.container_quiSom{
+.container_quiSom1{
     margin: 5px;
     display: flex;
+    align-items: center;
+}
+.container_quiSom2{
+    margin: 5px;
+    display: flex;
+    flex-direction: row-reverse;
     align-items: center;
 }
 #img1_quiSom{
@@ -153,10 +159,8 @@ button:hover{ /*La animació que tenen els botons*/
 .overlay {
     position: absolute; 
     bottom: 0; 
-    background: rgb(0, 0, 0);
     width: 86%;
-    transition: .5s;
-    opacity:0;
+    background: rgb(0, 0, 0, 0.5);
     color: white;
     font-size: 20px;
     padding: 5px;
@@ -165,7 +169,6 @@ button:hover{ /*La animació que tenen els botons*/
     border-end-start-radius: 5px;
     margin: 5%;
 }
-.containerCarta:hover .overlay {opacity: 1;}
 
 .containerCarta {
     position: relative;
@@ -211,3 +214,83 @@ footer{
     margin-top: 1%;
 }
 .material-icons{margin-left: 1vw;}
+
+
+/****************** MEDIA QUERIS ******************/
+@media only screen and (max-width: 768px){
+    /*HEADER*/
+    #titolHeader{display: none;}
+    .botons{
+        margin-left: 2%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /*QUI SOM*/
+    .container_quiSom1{flex-direction: column;}
+    .container_quiSom2{
+        flex-direction: column;
+        margin-top: 5%;
+    }
+    /*#img1_quiSom{
+        float:inherit;
+        display: flex;
+        justify-content: center;
+    }
+    #img2_quiSom{width: 100%;}*/
+    .img_quiSom{
+        width: 100%;
+    }
+    
+    /*CARTA*/
+    #imgCarta1{grid-area: img1;}
+    #imgCarta2{grid-area: img2;}
+    #imgCarta3{grid-area: img3;}
+    #imgCarta4{grid-area: img4;}
+    .insideCarta{
+        display: grid;
+        grid-template-areas: 
+        'carta_h2 carta_h2 carta_h2'
+        'carta_h3_1 txt1 txt1'
+        'carta_h3_1 img1 img1'
+        'carta_h3_1 img2 img2'
+        'carta_h3_2 txt2 txt2'
+        'carta_h3_2 img3 img3'
+        'carta_h3_2 img4 img4';
+    }
+
+    /*GALERIA*/
+    .img_galeria{
+        width: 44%;
+        margin: 3%;
+    }
+}
+@media only screen and (max-width: 576px){
+    /*PORTADA*/
+    #titolPortada{font-size: 20px;}
+    #titolPortada h2{font-size: 10px;}
+    
+    /*CARTA*/
+    .insideCarta{
+        display: grid;
+        grid-template-areas: 
+        'carta_h2'
+        'txt1'
+        'img1'
+        'img2'
+        'txt2'
+        'img3'
+        'img4';
+    }
+    #carta_h3_1{display: none;}
+    #carta_h3_2{display: none;}
+    #carta_h2{border-radius: 5px;}
+
+    /*GALERIA*/
+    .img_galeria{
+        width: 94%;
+    }
+
+    /*FOTER*/
+    #footer_dreta{display: none;}
+}
