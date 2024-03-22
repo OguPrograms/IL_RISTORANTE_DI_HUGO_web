@@ -216,7 +216,7 @@ footer{
 .material-icons{margin-left: 1vw;}
 
 
-/****************** MEDIA QUERIS ******************/
+/****************** MEDIA QUERIES ******************/
 @media only screen and (max-width: 768px){
     /*HEADER*/
     #titolHeader{display: none;}
