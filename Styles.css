@@ -15,6 +15,7 @@ h2{
     border-start-end-radius: 5px;
     color: white;
     text-align: center;
+    font-family: 'josefin-slab';
 }
 
 /******CAPÇALERA******/
@@ -35,6 +36,7 @@ header{
     font-size: 20px;
     color: white;
     margin-left: 2%;
+    font-family: 'josefin-slab';
 }
 /*Botons*/
 .botons{
@@ -64,14 +66,28 @@ button:hover{ /*La animació que tenen els botons*/
 }
 
 /******PORTADA******/
-.portada{width: 100%;}
+.portada{
+    overflow: hidden;
+    position: relative;
+}
+#yo{
+    position: absolute;
+    bottom: 4px;
+    right: 5%;
+    height: 80%;
+}
+.fondoPortada{
+    width: 100%;
+    height: auto;
+}
 #titolPortada{
     position: absolute;
-    top: 60px;
-    left: 60px;
-    text-shadow: 3px 3px 5px black; /*Ombra per al text*/
-    font-size: 30px;
+    top: 40%;
+    left: 5%;
+    text-shadow: 3px 3px 2px black; /*Ombra per al text*/
+    font-size: 24px;
     color: aliceblue;
+    font-family: sans-serif;
 }
 #titolPortada h2{font-size: 20px;}
 
@@ -119,6 +135,7 @@ button:hover{ /*La animació que tenen els botons*/
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'josefin-slab';
 }
 #carta_h2{
     grid-area:carta_h2;
@@ -182,23 +199,29 @@ button:hover{ /*La animació que tenen els botons*/
     justify-content: space-around;
 }
 .img_galeria{
-    width: 21%;
+    height: 100%;
+    width: 19%;
     margin: 2%;
-}
-.img_galeria img{
     border: 2px solid #000000;
     border-radius: 5px;
-    padding: 5px;
+    overflow: hidden;
 }
 .img_galeria img{
-    border-radius: 5px;
-    width: 100%
+    width: 100%;
+    scale: 106%;
+    transition-duration: 0.4s;
 }
 #img_enfosquida{
     filter: brightness(50%);
-    width: 100%;
-    
 }
+/*La animació de les imatges */
+.img_galeria img:hover{
+    filter: none;
+    scale: 130%;
+    rotate: 10deg;
+    filter: grayscale(100%);
+}
+#img_enfosquida:hover{filter: grayscale(100%)}
 
 /******FOOTER******/
 footer{
@@ -218,6 +241,10 @@ footer{
 
 /****************** MEDIA QUERIES ******************/
 @media only screen and (max-width: 768px){
+    /*PORTADA*/
+    #titolPortada{font-size: 15px;}
+    #titolPortada h2{font-size: 10px;}
+    
     /*HEADER*/
     #titolHeader{display: none;}
     .botons{
@@ -267,8 +294,16 @@ footer{
 }
 @media only screen and (max-width: 576px){
     /*PORTADA*/
-    #titolPortada{font-size: 20px;}
-    #titolPortada h2{font-size: 10px;}
+    #titolPortada{
+        font-size: 15px;
+        top: 10%;
+        left: 10%;
+    }
+    #titolPortada h2{font-size: 12px;}
+    #yo{
+        height: 70%;
+        right: 21%;
+    }
     
     /*CARTA*/
     .insideCarta{
