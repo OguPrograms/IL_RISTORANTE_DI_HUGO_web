@@ -127,6 +127,7 @@ button:hover{ /*La animació que tenen els botons*/
 .separacio{height: 5vh;}
 
 /******QUI SOM******/
+#flip{cursor: pointer;}
 .container_quiSom1{
     margin: 5px;
     display: flex;
@@ -151,6 +152,9 @@ button:hover{ /*La animació que tenen els botons*/
 .img_quiSom{
     width:15vw;
     border-radius: 5px;
+}
+.sectionQuiSom:hover{
+    cursor: pointer;
 }
 
 /******CARTA******/
@@ -253,16 +257,33 @@ button:hover{ /*La animació que tenen els botons*/
 #img_enfosquida:hover{filter: grayscale(100%)}
 
 /******VIDEO******/
-/* .video{
+.video-container{
     display: flex;
-    justify-content: center;
-    margin-top: 5vh;
+    overflow: hidden;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 7px;
+    border: 2px solid #000000;
 }
-#paella{
-    display: flex;
+#video{
+    width: 101%;
+}
+.btn_video{
+    flex-direction: row-reverse;
+    background-color: #00000020;
+    height: 30px;
+    backdrop-filter: blur(30px);
+    position: absolute;
     width: 10%;
-    justify-content: center;
-} */
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#playButton:hover{cursor: pointer;}
+#muteButton:hover{cursor: pointer;}
 
 /******FOOTER******/
 footer{
@@ -299,15 +320,6 @@ footer{
         flex-direction: column;
         margin-top: 5%;
     }
-    .sectionQuiSom:hover{
-        cursor: pointer;
-    }
-    /*#img1_quiSom{
-        float:inherit;
-        display: flex;
-        justify-content: center;
-    }
-    #img2_quiSom{width: 100%;}*/
     .img_quiSom{
         width: 100%;
     }
